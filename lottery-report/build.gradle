@@ -1,0 +1,25 @@
+plugins {
+	id 'java'
+}
+
+group = 'assessment'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.mockito:mockito-all:1.10.19'
+}
+
+jar {
+	manifest {
+		attributes(
+				'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+				'Main-Class': 'assessment.LotteryApplication'
+		)
+	}
+}
