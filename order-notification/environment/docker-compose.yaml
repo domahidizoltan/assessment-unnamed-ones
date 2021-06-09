@@ -1,0 +1,32 @@
+version: "3.6"
+
+services:
+  nats:
+    image: nats:2.2.1-scratch
+    container_name: nats
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+
+  db:
+    image: postgres:9.6.21-alpine
+    container_name: db
+    environment:
+      - "POSTGRES_PASSWORD=pass"
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer:4.8.0
+    container_name: adminer
+    ports:
+      - 7000:8080
+
+  partners:
+    image: rodolpheche/wiremock:2.27.1-alpine
+    container_name: partners
+    volumes:
+      - ./partnermocks:/home/wiremock
+    ports:
+      - 9000:8080

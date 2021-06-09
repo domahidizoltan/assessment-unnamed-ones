@@ -1,0 +1,47 @@
+{
+    "mappings": 
+    [
+        {
+            "request": {
+                "method": "POST",
+                "url": "/partner1/orders",
+                "headers": {
+                    "x-api-key": {
+                        "equalTo": "2306d5db-8cd8-4ad3-80c6-aff779e81eb2"
+                    }
+                }
+            },
+            "response": {
+                "status": 200
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/partner2/orders",
+                "headers": {
+                    "x-api-key": {
+                        "equalTo": "562efeb5-dca4-49e1-aa1d-542b730f9352"
+                    }
+                }
+            },
+            "response": {
+                "status": 200
+            }
+        },
+        {
+            "request": {
+                "method": "POST",
+                "url": "/partner3/orders",
+                "headers": {
+                    "x-api-key": {
+                        "equalTo": "5f090310-73e5-458f-a4d7-ab43ca8399ff"
+                    }
+                }
+            },
+            "response": {
+                "status": 200
+            }
+        }
+    ]
+}

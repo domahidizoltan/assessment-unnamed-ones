@@ -1,0 +1,17 @@
+@startuml
+
+component "OrdersNotificationService\nPOST /subscribe"as ONS
+database DB
+
+frame "Mocked clients" {
+    component "POST /orders" as client1 #Yellow
+    component "POST /orders" as client2 #Yellow
+}
+client1 -[hidden]- client2
+
+OrderEvent .right.> [ONS] : NATS
+[ONS] -down- DB
+[ONS] -> client1 : Rest
+[ONS] -> client2 : Rest
+
+@enduml

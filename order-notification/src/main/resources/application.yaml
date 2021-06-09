@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: create
+  datasource:
+    initialization-mode: always
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: pass
+
+nats:
+  host: localhost
+  port: 4222
+  topic: orders
